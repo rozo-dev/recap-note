@@ -354,16 +354,11 @@ export default function Welcome() {
                     </a>
                     <a
                       className="text-white  mr-4"
-                      href="https://github.com/amarakamara"
+                      href="https://github.com/rozo-dev"
                     >
                       <GitHubIcon />
                     </a>
-                    <a
-                      className="text-white  mr-4"
-                      href="https://twitter.com/AKama25864"
-                    >
-                      <TwitterIcon />
-                    </a>
+              
                   </div>
                 </div>
               </Slide>
