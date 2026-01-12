@@ -39,7 +39,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const allowedOrigins = [
-  "https://recapnote.netlify.app",
+  process.env.clientURL,
   "http://localhost:3000",
 ];
 
