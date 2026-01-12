@@ -1,0 +1,441 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@600;700&family=Poppins:wght@100;200&display=swap");
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
+  overflow: hidden;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header "
+    "account account account"
+    "menu main  right"
+    "footer footer footer";
+  grid-template-columns: 0px 3fr 0px;
+  grid-template-rows: 50px 40px auto 40px;
+  max-height: 100vh;
+  max-height: 100dvh;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-areas:
+      "header header header "
+      "account account account"
+      "menu main  right"
+      "footer footer footer";
+    grid-template-columns: 40px 3fr 120px;
+    grid-template-rows: 50px 0 auto 40px;
+    gap: 10px;
+  }
+}
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-areas:
+      "header header header "
+      "account account account"
+      "menu main  right"
+      "footer footer footer";
+    grid-template-columns: 40px 3fr 170px;
+    grid-template-rows: 50px 0 auto 40px;
+    gap: 10px;
+  }
+}
+/*header*/
+header {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    160deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 55, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  grid-area: header;
+}
+/*Menus*/
+.menu {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    110deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 55, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border-radius: 0 7px 7px 0;
+  grid-area: menu;
+}
+
+.menu li {
+  margin: 30px 0;
+}
+
+.menu .link-items {
+  color: #fff;
+  cursor: pointer;
+}
+/*Mobile Menu*/
+.mobile-menu {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.menu-ul li {
+  font-size: 1.5rem;
+  margin: 5px 10px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.mobile-menu .link-mobile {
+  text-decoration: none;
+  color: rgba(9, 55, 121);
+}
+
+/*footer*/
+footer {
+  grid-area: footer;
+}
+
+/*Ad space*/
+.ad {
+  grid-area: right;
+}
+
+.account-info {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    120deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 55, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.account-items p {
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline;
+  margin-right: 7px;
+  color: rgba(9, 55, 121, 1);
+}
+.account-items.mobile p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline;
+  margin-right: 7px;
+  color: rgba(9, 55, 121, 1);
+}
+
+.account-mobile {
+  grid-area: account;
+}
+
+.account-items div {
+  height: auto;
+  margin-right: 0.5px;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .account-items p {
+    font-size: 0.9rem;
+  }
+}
+
+/*Main Content area*/
+.container {
+  grid-area: main;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar {
+  width: 0; /* Hide default scrollbar for WebKit browsers (Chrome, Safari, etc.) */
+}
+content-box
+/*Each Note*/
+
+.note {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.content-box {
+  grid-area: main;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.content-box::-webkit-scrollbar {
+  width: 0; /* Hide default scrollbar for WebKit browsers (Chrome, Safari, etc.) */
+}
+
+/*Create Note button and form*/
+
+.note-box input::placeholder,
+textarea::placeholder {
+  font-size: 1.2rem;
+  font-size: bold;
+  color: #ccc;
+  font-family: "Montserrat", sans-serif;
+}
+.submitNote-btn,
+.contact-btn {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    110deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 55, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+form.note-box button.cancel-btn {
+  background: none;
+}
+
+form.buttonForm button {
+  height: 40px;
+  width: 40px;
+  background-color: rgba(9, 55, 121);
+  position: fixed;
+}
+
+form.buttonForm {
+  width: 0;
+  height: 0;
+}
+/* Editing a note page*/
+
+form.edit-form button {
+  margin: 10px auto 0;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    110deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 55, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+form.edit-form input::value {
+  font-family: "Jost", sans-serif;
+}
+
+form.edit-form textarea::value {
+  font-family: "Poppins", sans-serif;
+}
+.view-collection hr {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    110deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 55, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+/*View A Note*/
+.view-note {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.view-note::-webkit-scrollbar {
+  display: none;
+}
+
+.view-note .content {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.view-note .content::-webkit-scrollbar {
+  display: none;
+}
+
+.view-note hr {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    110deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 55, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+/******  LOGIN/REGISTER *******/
+
+.container-full {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    110deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 55, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.logReg-form {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+form.logReg-form .input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid #f1efef;
+  border-radius: 8px;
+}
+
+form.logReg-form .input:focus {
+  outline: none; /* Remove the outline on focus */
+}
+form.logReg-form input::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(9, 55, 121, 1);
+  margin: 0;
+  padding: 0;
+}
+
+form.logReg-form input[type="text"],
+input[type="password"] {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+form.logReg-form button {
+  background-color: rgba(9, 55, 121);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    110deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 55, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border: 0.5px solid #f1efef;
+}
+
+/******  Welcome*******/
+.sec-2 {
+  background-color: rgba(9, 55, 121);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    -360deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(9, 55, 121, 1) 100%
+  );
+}
+
+@media screen and (min-width: 0px) and (max-width: 300px) {
+  .h-text {
+    font-size: 2.7rem;
+  }
+  .h-p {
+    font-size: 0.9rem;
+  }
+  .headings {
+    font-size: 2rem;
+  }
+  .hand-img {
+    width: 8.5rem;
+  }
+  .features-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 500px) {
+  .h-text {
+    font-size: 3.5rem;
+  }
+  .h-p {
+    font-size: 1rem;
+  }
+  .headings {
+    font-size: 3rem;
+  }
+  .hand-img {
+    width: 12rem;
+  }
+  .features-text {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 639px) {
+  .h-text {
+    font-size: 5rem;
+  }
+  .h-p {
+    font-size: 1.3rem;
+  }
+  .h-a {
+    font-size: 1.2rem;
+  }
+  .h-img {
+    width: 100%;
+  }
+  .headings {
+    font-size: 3.5rem;
+  }
+  .hand-img {
+    width: 15rem;
+  }
+  .features-text {
+    font-size: 1.9rem;
+  }
+}
+
+/*SECTION 4 ***/
+.img-box {
+  background-color: rgba(9, 55, 121);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    -360deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(9, 55, 121, 1) 100%
+  );
+}
